@@ -15,7 +15,6 @@ const getTask = async (req, res) => {
 };
 
 const addTask = async (req, res) => {
-    console.log(req.headers)
   const { title } = req.body;
   try {
     const checkTask = await TaskModal.findOne({ title });
