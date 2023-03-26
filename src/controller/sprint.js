@@ -25,8 +25,9 @@ const addSprint = async (req, res) => {
 };
 
 const getAllSprint = async (req, res) => {
+  console.log(req.userId, "data");
   try {
-    const Sprint = await SprintModal.find();
+    const Sprint = await SprintModal.find({ userId: req.userId });
     res.status(200).send({
       status: "success",
       message: "Get all sprint data successfully",
